@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 int main() {
     // Carta 1
     char estado1;
@@ -7,8 +8,10 @@ int main() {
     char nomeCidade1[50];
     int populacao1;
     float area1;
-    float pib1;
+    float pib1; // em bilhoes
     int pontosTuristicos1;
+    float densidade1;
+    float pibPerCapita1;
 
     // Carta 2
     char estado2;
@@ -16,8 +19,10 @@ int main() {
     char nomeCidade2[50];
     int populacao2;
     float area2;
-    float pib2;
+    float pib2; // em bilhoes
     int pontosTuristicos2;
+    float densidade2;
+    float pibPerCapita2;
 
     // cadastro carta 1
     printf("=== Cadastro da Carta 1 ===\n");
@@ -43,6 +48,10 @@ int main() {
     printf("Numero de Pontos Turisticos: ");
     scanf("%d", &pontosTuristicos1);
 
+    // Cálculos
+    densidade1 = populacao1 / area1;
+    pibPerCapita1 = (pib1 * 1000000000) / populacao1; // Convertendo PIB de bilhoes para reais antes de calcular o per capita 
+
     // Cadastro carta 2
     printf("\n=== Cadastro da Carta 2 ===\n");
 
@@ -67,6 +76,10 @@ int main() {
     printf("Numero de Pontos Turisticos: ");
     scanf("%d", &pontosTuristicos2);
 
+    // Cálculos
+    densidade2 = populacao2 / area2;
+    pibPerCapita2 = (pib2 * 1000000000) / populacao2;
+
     // exibindo resultado
     printf("\n\n===== DADOS CADASTRADOS =====\n");
 
@@ -78,6 +91,8 @@ int main() {
     printf("Area: %.2f km2\n", area1);
     printf("PIB: %.2f bilhoes de reais\n", pib1);
     printf("Numero de Pontos Turisticos: %d\n", pontosTuristicos1);
+    printf("Densidade Populacional: %.2f hab/km2\n", densidade1);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita1);
 
     printf("\nCarta 2:\n");
     printf("Estado: %c\n", estado2);
@@ -87,6 +102,8 @@ int main() {
     printf("Area: %.2f km2\n", area2);
     printf("PIB: %.2f bilhoes de reais\n", pib2);
     printf("Numero de Pontos Turisticos: %d\n", pontosTuristicos2);
+    printf("Densidade Populacional: %.2f hab/km2\n", densidade2);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
 
     return 0;
 }
